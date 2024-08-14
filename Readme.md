@@ -27,3 +27,16 @@ This repo has the tools & scripts to clean, format and upload raw .xlsx data int
     - `packages_all_staging` -> Secondary table for holding current data when we update new data
     - `test` -> Table for testing
 - The upload of data can take quite a long time, roughly 2h for 20300~ rows
+
+### Granting Access to New Microsoft Entra User ###
+```
+\c postgres
+
+GRANT CONNECT ON DATABASE postgres TO "microsoft_entra_admin_name";
+
+GRANT USAGE ON SCHEMA public TO "microsoft_entra_admin_name";
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO "microsoft_entra_admin_name";
+
+GRANT USAGE ON SCHEMA public TO "microsoft_entra_admin_name";
+```

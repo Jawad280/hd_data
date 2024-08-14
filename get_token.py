@@ -5,7 +5,7 @@ from azure.identity import DefaultAzureCredential
 
 async def get_token():
     credential = DefaultAzureCredential(logging_enable=True)
-    token = credential.get_token("https://ossrdbms-aad.database.windows.net/.default")
+    token = credential.get_token("https://ossrdbms-aad.database.windows.net")
     return token.token
 
 
